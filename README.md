@@ -60,7 +60,8 @@ pip install django
 
 - **Frontend**:  
   - **HTML**: Markup language used for structuring content on the web pages.  
-  - **CSS**: Used for styling the application, including custom styles like `style.css`.  
+  - **CSS**: Used for styling the application, including custom styles like `style.css`.
+  - **JS** requirments for password and username
 
 - **Database**:  
   - **SQLite**: A lightweight, file-based relational database used during development. Django's ORM (Object-Relational Mapping) simplifies database interactions.
