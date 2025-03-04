@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ByteCoven - Your ultimate destination for gaming. Discover and purchase software, games, and exclusive digital content.">
+    <title>ByteCoven - HomePage</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="main-width">
+            <!-- Header -->
+            <header>
+                <div class="logo">
+                    <h2><a href="#" aria-label="ByteCoven Home">ByteCoven</a></h2>
+                </div>
+
+                <!-- Navigation -->
+                <nav>
+                    <ul>
+                        <li class="active"><a href="#">Store</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">News</a></li>
+                        <li class="btn"><a href="{% url 'login' %}" role="button">Login</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Main Content -->
+            <div class="content">
+                <div class="main-text">
+                    <h2>Welcome To</h2>
+                    <h1>ByteCoven</h1>
+                    <p>Welcome to ByteCoven, the ultimate destination for gamers. Discover and purchase software, games, and exclusive digital content with ease. Enjoy secure transactions and instant access to your purchases. Unlock special deals, bundles, and early access offers. Connect with creators, developers, and a thriving community. Your digital journey starts here.</p>
+                    <a href="#" role="button">Download Now</a>
+                    <a href="#" class="cta" role="button"><i class="fa-solid fa-play"></i> Community</a>
+                </div>
+
+                <!-- Image -->
+                <div class="image">
+                    <img src="{% static 'images/ramy.png' %}" alt="Game Character Art">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional: Add a footer or other sections here -->
+
+</body>
+</html>

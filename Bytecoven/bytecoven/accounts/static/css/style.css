@@ -1,0 +1,249 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Outfit", sans-serif;
+    overflow-x: hidden;
+    background: radial-gradient(#403e8b, 20%, #3e4a8b);
+    color: white;
+}
+
+/* Container for centering content */
+.main-width {
+    width: 1400px;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Header Styles */
+.hero header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0 30px;
+}
+
+/* Logo Styles */
+.hero header .logo h2 a {
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.hero header .logo h2 a:hover {
+    color: #f5dca8; /* Change color on hover */
+}
+
+/* Navigation Styles */
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li:hover {
+    transform: scale(1.1);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: 0.4s;
+}
+
+nav ul li:not(:last-child) a:hover,
+nav ul li:not(:last-child) a:focus {
+    border-bottom: 2px solid white;
+    color: #f5dca8; /* Change color on hover */
+}
+
+nav ul li.active a {
+    border-bottom: 2px solid white;
+}
+
+/* Button Styles */
+nav ul li.btn a {
+    background: transparent;
+    color: white;
+    border: 1px solid #f5dca8;
+    padding: 9px 20px;
+    border-radius: 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: background 0.4s, color 0.4s, transform 0.3s ease-in-out;
+    position: relative; /* Ensure it can use z-index */
+    z-index: 2; /* Higher than the image */
+}
+
+nav ul li.btn a:hover {
+    background: white;
+    color: black;
+    border: 1px solid white;
+    transform: scale(1.1);
+}
+
+/* Main Content Styles */
+.content {
+    padding-top: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1; /* Ensure content is above the image */
+}
+
+.content .main-text {
+    max-width: 600px;
+}
+
+.content .main-text h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 100px;
+    font-weight: 400;
+    color: white;
+    margin: 0; /* Remove default margin */
+    line-height: 1; /* Adjust line height */
+}
+
+
+.content .main-text h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin: 0; /* Remove default margin */
+    line-height: 1.2; /* Adjust line height */
+}
+
+.content .main-text p {
+    color: white;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+/* Button Styles in Main Text */
+.content .main-text a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background: white;
+    border: 1px solid white;
+    padding: 9px 25px;
+    line-height: 1.4;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.4s, color 0.4s, transform 0.3s ease-in-out;
+}
+
+.content .main-text a:hover {
+    background: transparent;
+    color: white;
+    border: 1px solid #f5dca8;
+    transform: scale(1.1);
+}
+
+.content .main-text a.cta {
+    border: 1px solid #f5dca8;
+    color: white;
+    background: transparent;
+    margin-left: 20px;
+}
+
+.content .main-text a.cta:hover {
+    background: white;
+    color: black;
+    border: 1px solid white;
+}
+
+.content .main-text a.cta i {
+    margin-right: 12px;
+}
+
+/* Image Styles */
+.image img {
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    z-index: 0; /* Move the image to the back */
+    opacity: 0.8; /* Optional: Adjust opacity if needed */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image img {
+        position: static;
+        margin-top: 30px;
+    }
+
+    .content .main-text {
+        max-width: 100%;
+    }
+
+    .content .main-text h1 {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li.btn a {
+        margin-left: 0;
+    }
+
+    .content .main-text h1 {
+        font-size: 60px;
+    }
+
+    .content .main-text h2 {
+        font-size: 16px;
+    }
+
+    .content .main-text p {
+        font-size: 14px;
+    }
+}

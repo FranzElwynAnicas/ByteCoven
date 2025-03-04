@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="{% static 'js/form-validation.js' %}" defer></script>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: radial-gradient(#403e8b, 20%, #3e4a8b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Form Container */
+        .form-container {
+            background: #28282B;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Input Fields */
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px auto;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            display: block;
+            text-align: center;
+        }
+
+        /* Password & Username Requirements (Hidden by Default) */
+        .requirements {
+            display: none;
+            text-align: left;
+            font-size: 12px;
+            color: #ccc;
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        /* Buttons */
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(to right, #ff416c, #007bff);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* xo Home Button */
+        .home-btn {
+            display: block;
+            margin-top: 15px;
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: #28282B;
+        }
+
+        /* Links */
+        p a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>SIGN UP</h2>
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Username Field -->
+            <label>Username:</label>
+            <input type="text" id="username" name="username" required placeholder="Enter your username">
+            <ul class="requirements" id="username-requirements">
+                <li>Must be 150 characters or fewer</li>
+                <li>Can contain letters, numbers, and @/./+/-/_</li>
+            </ul>
+
+            <!-- Password Field -->
+            <label>Password:</label>
+            <input type="password" id="password" name="password1" required placeholder="Enter your password">
+            <ul class="requirements" id="password-requirements">
+                <li>At least 8 characters long</li>
+                <li>Must include letters and numbers</li>
+                <li>Cannot be too common or similar to your username</li>
+                <li>Cannot be entirely numeric</li>
+            </ul>
+
+            <!-- Confirm Password Field -->
+            <label>Password Confirmation:</label>
+            <input type="password" name="password2" required placeholder="Confirm your password">
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+
+        <p><a href="{% url 'home' %}" class="btn">Back to Home</a></p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const usernameInput = document.getElementById("username");
+            const passwordInput = document.getElementById("password");
+            const usernameReqs = document.getElementById("username-requirements");
+            const passwordReqs = document.getElementById("password-requirements");
+
+            // Show username requirements when typing
+            usernameInput.addEventListener("focus", function () {
+                usernameReqs.style.display = "block";
+            });
+
+            usernameInput.addEventListener("blur", function () {
+                usernameReqs.style.display = "none";
+            });
+
+            // Show password requirements when typing
+            passwordInput.addEventListener("focus", function () {
+                passwordReqs.style.display = "block";
+            });
+
+            passwordInput.addEventListener("blur", function () {
+                passwordReqs.style.display = "none";
+            });
+        });
+    </script>
+</body>
+</html>
